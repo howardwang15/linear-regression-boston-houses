@@ -4,6 +4,10 @@ from sklearn.datasets import load_boston
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import normalize
 
+n_testing_samples = 20
+n_epochs = 5000
+
+
 def load_data():
     data, targets = load_boston(True)
     data = normalize(data)
@@ -24,7 +28,7 @@ if __name__ == '__main__':
     init = tf.global_variables_initializer()
     sess = tf.InteractiveSession()
     sess.run(init)
-    for epoch in range(5000):
+    for epoch in range(n_epochs):
         sess.run(optimizer, feed_dict={features: x_train, targets: y_train})
         accuracy = loss.eval(feed_dict={features: x_train, targets: y_train})
         if epoch % 100 == 0:
@@ -32,9 +36,9 @@ if __name__ == '__main__':
 
     testing_predictions = sess.run(predicted, feed_dict={features: x_test})
     testing_predictions = testing_predictions.flatten()
-    y_test = y_test.reshape((152))
+    y_test = y_test.reshape(152)
 
-    for sample in range(20):
+    for sample in range(n_testing_samples):
         rand = np.random.randint(0, 152)
         prediction = testing_predictions[rand]
         actual = y_test[rand]
