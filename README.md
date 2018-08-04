@@ -1,0 +1,1 @@
+This python script is an example of using one of the simplest machine learning algorithms, linear regression, to predict house prices in Boston. The dataset I used is from sklearn (see http://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_boston.html)
