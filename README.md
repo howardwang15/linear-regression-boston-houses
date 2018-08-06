@@ -5,5 +5,7 @@ Linear regression is an algorithm generally used for creating a straight line of
 
 The dataset I used is from sklearn (see http://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_boston.html).
 
+For this dataset, we have 13 features: CRIM (per capita crime rate), ZN (proportion of residential land zoned)
+
 
 
